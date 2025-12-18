@@ -1,7 +1,8 @@
 import "./App.css";
+import { Login } from "./components/Login";
 
 function App() {
-  return <div className="p-4 bg-red-500">Si lees esto regalas 1 sub</div>;
+  return <Login />;
 }
 
 export default App;
