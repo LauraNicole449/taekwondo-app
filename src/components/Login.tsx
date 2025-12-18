@@ -14,10 +14,7 @@ export const Login = () => {
   return (
     <section className="font-manrope w-screen flex item-center justify-center h-screen min-h-dvh bg-[url('/imgs/bg-login.webp')] bg-no-repeat bg-size-[150%] bg-position-[center_top_-5rem]">
       <div className="flex items-center justify-center w-full h-full">
-        <form
-          noValidate
-          className="flex h-fit w-[90%] flex-col items-center justify-center gap-4 bg-white border border-gray-300 px-4 py-6 rounded-md"
-        >
+        <form className="flex h-fit w-[90%] flex-col items-center justify-center gap-4 bg-white border border-gray-300 px-4 py-6 rounded-md">
           <div className="flex flex-col items-center w-full gap-2">
             <img src="/imgs/logo.webp" width={72} alt="logo escuela" />
             <h1 className="text-3xl font-bold">Iniciar sesión</h1>
@@ -31,7 +28,6 @@ export const Login = () => {
               type="email"
               className="flex items-center w-full h-12 px-4 text-gray-900 border border-gray-300 rounded-md active:border-gray-400"
               placeholder="Correo electrónico"
-              onBlur={() => {}}
               onChange={(event) => {
                 setFormData({ ...formData, email: event.target.value });
               }}
