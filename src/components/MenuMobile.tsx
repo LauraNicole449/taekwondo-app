@@ -1,16 +1,16 @@
 import { Book, Paperclip, User, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
-interface NavItem {
+type NavItem = {
   to: string;
   icon: React.ReactNode;
   label: string;
-}
+};
 
-interface MenuMobileProps {
+type MenuMobileProps = {
   isOpen: boolean;
   onClose: () => void;
-}
+};
 
 export const MenuMobile = ({ isOpen, onClose }: MenuMobileProps) => {
   const location = useLocation();
@@ -60,7 +60,6 @@ export const MenuMobile = ({ isOpen, onClose }: MenuMobileProps) => {
         isOpen ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      {/* Header dentro del menú */}
       <header className="flex items-center justify-between flex-none w-full p-2 border-b">
         <a href="/">
           <img src="/imgs/logo.webp" width={72} alt="logo escuela" />
@@ -71,11 +70,10 @@ export const MenuMobile = ({ isOpen, onClose }: MenuMobileProps) => {
           className="p-2 transition-colors duration-200 rounded-lg hover:bg-gray-100"
           aria-label="Cerrar menú"
         >
-          <X className="w-6 h-6" />
+          <X width={24} height={24} />
         </button>
       </header>
 
-      {/* Navegación */}
       <nav className="flex flex-col py-6">
         {navItems.map((item, index) => {
           const isActive = location.pathname === item.to;
@@ -86,7 +84,7 @@ export const MenuMobile = ({ isOpen, onClose }: MenuMobileProps) => {
               onClick={onClose}
               className={`flex items-center gap-4 px-6 py-4 transition-all duration-200 ${
                 isActive
-                  ? "bg-[#800000]/10 text-[#800000] border-l-4 border-[#800000]"
+                  ? "bg-primary/10 text-primary border-l-4 border-primary"
                   : "text-gray-700 hover:bg-gray-50"
               }`}
               style={{
@@ -95,14 +93,13 @@ export const MenuMobile = ({ isOpen, onClose }: MenuMobileProps) => {
                   : "none",
               }}
             >
-              <span className="flex-shrink-0">{item.icon}</span>
+              <span className="shrink-0">{item.icon}</span>
               <span className="text-lg font-medium">{item.label}</span>
             </Link>
           );
         })}
       </nav>
 
-      {/* Animación keyframes */}
       <style>{`
         @keyframes slideIn {
           from {
