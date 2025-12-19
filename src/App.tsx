@@ -1,11 +1,11 @@
-import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Exams } from "./components/Exams";
-import { Login } from "./components/Login";
-import { Tules } from "./components/Tules";
-import { Theory } from "./components/Theory";
-import { Account } from "./components/Account";
-import { MainLayout } from "./components/MainLayout";
+import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Exams } from './components/Exams';
+import { Login } from './components/Login';
+import { Tules } from './components/Tules';
+import { Theory } from './components/Theory';
+import { Account } from './components/Account';
+import { MainLayout } from './components/MainLayout';
 
 function App() {
   const isLogged = true;
