@@ -5,9 +5,6 @@ import { VitePWA } from "vite-plugin-pwa";
 import { createAppleSplashScreens, minimal2023Preset } from '@vite-pwa/assets-generator/config';
 
 export default defineConfig({
-  preview: {
-    allowedHosts: ['.ngrok-free.app']
-  },
   plugins: [
     react(),
     tailwindcss(),
