@@ -41,7 +41,7 @@ export const Login = ({ onLoginSuccess }: LoginProps) => {
           className="flex h-fit w-[90%] flex-col items-center justify-center gap-4 bg-white border border-gray-300 px-4 py-6 rounded-md"
         >
           <div className="flex flex-col items-center w-full gap-2">
-            <img src="/imgs/logo.webp" width={72} alt="logo escuela" />
+            <img src="/imgs/logo.webp" width={80} alt="logo escuela" />
             <h1 className="text-3xl font-bold">Iniciar sesión</h1>
             <p className="leading-5 text-center text-gray-500 text-md">
               Inicia sesión en tu cuenta de Taekwondo de la escuela RAM
@@ -81,7 +81,7 @@ export const Login = ({ onLoginSuccess }: LoginProps) => {
               {showPassword ? <Eye size={16} /> : <EyeOff size={16} />}
             </button>
           </label>
-          <Button handleClick={signIn} type='submit' disabled={!isFormValid}>
+          <Button handleClick={signIn} type="submit" disabled={!isFormValid}>
             Iniciar sesión
           </Button>
           <footer>

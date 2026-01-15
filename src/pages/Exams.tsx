@@ -1,20 +1,27 @@
-import { exams, getBeltColorClass } from '../consts/exams';
+import { ChevronRight } from 'lucide-react';
+import { Exam, exams } from '../consts/exams';
 
 export const Exams = () => {
   return (
-    <div className="space-y-4 pt-4">
-      {exams.map((exam) => (
-        <div key={exam.id} className="p-4 bg-white rounded-lg shadow-sm">
-          <div className="flex items-center gap-3 mb-3">
-            <div
-              className={`w-4 h-16 rounded-full border-2 ${getBeltColorClass(exam.color)}`}
-              title={exam.color}
-            />
-            <h2 className="font-semibold text-gray-800">{exam.grado}</h2>
-          </div>
-          <p className="text-sm text-gray-600">{exam.descripcion}</p>
-        </div>
-      ))}
+    <section className="flex flex-col gap-2 pt-4">
+      <h1 className="text-xl">Selecciona tu examen</h1>
+      <div className="pt-4 space-y-4">
+        {exams.map((exam) => (
+          <ExamCard key={exam.id} exam={exam} />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+const ExamCard = ({ exam }: { exam: Exam }) => {
+  return (
+    <div className="flex items-center justify-between px-4 py-6 bg-white rounded-full shadow-xs">
+      <div className="flex items-center gap-3">
+        <img src={exam.img} alt={exam.range} width={80} />
+        <h2 className="font-semibold text-gray-800">{exam.range}</h2>
+      </div>
+      <ChevronRight color="#191919" size={20} />
     </div>
   );
 };

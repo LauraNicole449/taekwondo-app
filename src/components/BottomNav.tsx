@@ -1,6 +1,6 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import { useRef, useEffect, useState, type ReactNode } from 'react';
-import { Book, Paperclip, User } from 'lucide-react';
+import { BookOpenCheck, BookText, UserRound } from 'lucide-react';
 
 type IndicatorStyle = {
   left: number;
@@ -30,38 +30,24 @@ export const BottomNav = ({ isHidden = false }: BottomNavProps) => {
   const navItems: NavItem[] = [
     {
       to: '/',
-      icon: <Book />,
+      icon: <BookOpenCheck strokeWidth={1.5} />,
       label: 'Exámenes',
     },
     {
       to: '/tules',
       icon: (
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          aria-hidden="true"
-        >
-          <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-          <path d="M2 17l10 5 10-5"></path>
-          <path d="M2 12l10 5 10-5"></path>
-        </svg>
+        <img src="/svgs/Formas.svg" width={24} height={24} alt="Tules Icon" />
       ),
-      label: 'Tules',
+      label: 'Formas',
     },
     {
       to: '/theory',
-      icon: <Paperclip />,
+      icon: <BookText strokeWidth={1.25} />,
       label: 'Teoría',
     },
     {
       to: '/account',
-      icon: <User />,
+      icon: <UserRound strokeWidth={1.5} />,
       label: 'Perfil',
     },
   ];
@@ -104,7 +90,7 @@ export const BottomNav = ({ isHidden = false }: BottomNavProps) => {
         }}
       />
 
-      <ul className="flex items-center h-16 max-w-2xl p-0 m-0 mx-auto list-none">
+      <ul className="flex items-center h-16 max-w-2xl gap-4 p-0 m-0 mx-auto list-none">
         {navItems.map((item) => {
           const isActive = location.pathname === item.to;
 
@@ -123,7 +109,7 @@ export const BottomNav = ({ isHidden = false }: BottomNavProps) => {
                   rounded-lg transition-colors duration-200
                   hover:bg-gray-100 focus:outline-none focus-visible:ring-2 
                   focus-visible:ring-primary-500 focus-visible:ring-offset-2
-                  ${isActive ? 'text-primary-500' : 'text-gray-500'}
+                  ${isActive ? 'text-primary-500' : '#191919'}
                 `}
                 aria-label={item.label}
                 aria-current={isActive ? 'page' : undefined}
@@ -131,7 +117,7 @@ export const BottomNav = ({ isHidden = false }: BottomNavProps) => {
                 <span className="flex items-center justify-center w-6 h-6">
                   {item.icon}
                 </span>
-                <span className="text-xs font-medium leading-none">
+                <span className="leading-none font-lg text-md">
                   {item.label}
                 </span>
               </NavLink>

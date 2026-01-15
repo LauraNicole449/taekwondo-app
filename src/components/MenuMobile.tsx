@@ -64,12 +64,12 @@ export const MenuMobile = ({ isOpen, onClose, onLogout }: MenuMobileProps) => {
     >
       <header className="flex items-center justify-between flex-none w-full p-2 border-b safe-area-top">
         <a href="/">
-          <img src="/imgs/logo.webp" width={72} alt="logo escuela" />
+          <img src="/imgs/logo.webp" width={80} alt="logo escuela" />
         </a>
 
         <button
           onClick={onClose}
-          type='button'
+          type="button"
           className="p-2 transition-colors duration-200 rounded-lg hover:bg-gray-100"
           aria-label="Cerrar menú"
         >

@@ -1,4 +1,4 @@
-import { Menu } from "lucide-react";
+import { Menu } from 'lucide-react';
 
 interface HeaderProps {
   onMenuToggle: () => void;
@@ -6,14 +6,14 @@ interface HeaderProps {
 
 export const Header = ({ onMenuToggle }: HeaderProps) => {
   return (
-    <header className="relative z-40 flex items-center justify-between flex-none w-full px-4 py-2 bg-white shadow-sm safe-area-top">
+    <header className="relative z-40 flex items-center justify-between flex-none mx-6 my-4 safe-area-top">
       <a href="/">
-        <img src="/imgs/logo.webp" width={72} alt="logo escuela" />
+        <img src="/imgs/logo.webp" width={80} alt="Logo de la escuela RAM" />
       </a>
 
       <button
         onClick={onMenuToggle}
-        className="p-2 transition-colors duration-200 rounded-lg hover:bg-gray-100"
+        className="transition-colors duration-200 rounded-lg hover:bg-gray-100"
         aria-label="Abrir menú"
       >
         <Menu className="w-6 h-6" />
