@@ -10,6 +10,8 @@ import { MainLayout } from './pages/MainLayout';
 import { InstallPWA } from './components/InstallPWA';
 import { TulManagement } from './pages/TulManagement';
 import { TulVideo } from './pages/TulVideo';
+import { ExamDetail } from './pages/ExamDetail';
+import { ProgressProvider } from './context/ProgressContext';
 
 function App() {
   const [isLogged, setIsLogged] = useState(() => {
@@ -31,20 +33,23 @@ function App() {
   };
 
   const appContent = isLogged ? (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<MainLayout onLogout={handleLogout} />}>
-          <Route path="/" element={<Exams />} />
-          <Route path="/tules">
-            <Route index element={<Tules />} />
-            <Route path=":tulId" element={<TulManagement />} />
-            <Route path=":tulId/video" element={<TulVideo />} />
+    <ProgressProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<MainLayout onLogout={handleLogout} />}>
+            <Route path="/" element={<Exams />} />
+            <Route path="/exam/:examId" element={<ExamDetail />} />
+            <Route path="/tules">
+              <Route index element={<Tules />} />
+              <Route path=":tulId" element={<TulManagement />} />
+              <Route path=":tulId/video" element={<TulVideo />} />
+             </Route>
+            <Route path="/theory" element={<Theory />} />
+            <Route path="/account" element={<Account />} />
           </Route>
-          <Route path="/theory" element={<Theory />} />
-          <Route path="/account" element={<Account />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
+    </ProgressProvider>
   ) : (
     <Login onLoginSuccess={handleLoginSuccess} />
   );

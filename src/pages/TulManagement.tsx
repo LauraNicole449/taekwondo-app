@@ -21,6 +21,7 @@ export const TulManagement = () => {
         </div>
         <p className="text-lg">{selectedTul.moves} movimientos</p>
       </div>
+
       <div className="flex flex-col gap-2">
         <p className="text-xl font-semibold">Diagrama</p>
         <img src={selectedTul.diagram} alt="Diagrama del tul" />
