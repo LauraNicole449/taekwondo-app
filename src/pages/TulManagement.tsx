@@ -16,7 +16,14 @@ export const TulManagement = () => {
     <section className="flex flex-col gap-6">
       <div className="flex flex-col gap-1">
         <div className="flex items-center justify-between">
-          <h1 className="text-3xl font-medium">{selectedTul.name}</h1>
+          <div className="flex items-center gap-2">
+            <h1 className="text-3xl font-medium">{selectedTul.name}</h1>
+            {selectedTul.isPreTul && (
+              <span className="px-2 py-0.5 text-xs font-medium text-white rounded bg-amber-500">
+                Pre-Tul
+              </span>
+            )}
+          </div>
           <p className="text-xl">{selectedTul.korean_name}</p>
         </div>
         <p className="text-lg">{selectedTul.moves} movimientos</p>

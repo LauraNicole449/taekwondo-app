@@ -81,7 +81,6 @@ export const Tules = () => {
 };
 
 const TulCard = ({ tul }: { tul: Tul }) => {
-
   return (
     <Link
       to={`/tules/${tul.id}`}
@@ -89,6 +88,11 @@ const TulCard = ({ tul }: { tul: Tul }) => {
     >
       <div className="relative">
         <img src="/imgs/Rectangle.png" alt="Tul" className="w-full" />
+        {tul.isPreTul && (
+          <span className="absolute px-2 py-0.5 text-xs font-medium text-white rounded bg-amber-500 top-2 right-2">
+            Pre-Tul
+          </span>
+        )}
       </div>
       <div className="flex flex-col px-4">
         <h2 className="text-lg font-medium">{tul.name}</h2>

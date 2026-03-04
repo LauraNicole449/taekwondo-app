@@ -47,22 +47,22 @@ export const MenuMobile = ({ isOpen, onClose, onLogout }: MenuMobileProps) => {
         isOpen ? 'translate-x-0' : 'translate-x-full'
       }`}
     >
-      <header className="flex items-center justify-between flex-none w-full p-2 border-b safe-area-top">
+      <header className="flex items-center justify-between flex-none w-full px-4 my-4 safe-area-top">
         <a href="/">
-          <img src="/imgs/logo.webp" width={80} alt="logo escuela" />
+          <img src="/imgs/logo.webp" width={64} alt="Logo de la escuela RAM" />
         </a>
 
         <button
           onClick={onClose}
           type="button"
-          className="p-2 transition-colors duration-200 rounded-lg active:bg-gray-100"
+          className="transition-colors duration-200 rounded-lg active:bg-gray-100"
           aria-label="Cerrar menú"
         >
-          <X width={24} height={24} />
+          <X width={20} height={20} />
         </button>
       </header>
 
-      <nav className="flex flex-col flex-1 py-6 overflow-y-auto">
+      <nav className="flex flex-col py-6 overflow-y-auto">
         {navItems.map((item, index) => {
           const isActive =
             item.to === '/'

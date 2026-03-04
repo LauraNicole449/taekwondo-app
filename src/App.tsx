@@ -5,6 +5,7 @@ import { Exams } from './pages/Exams';
 import { Login } from './pages/Login';
 import { Tules } from './pages/Tules';
 import { Theory } from './pages/Theory';
+import { TheoryStudy } from './pages/TheoryStudy';
 import { Account } from './pages/Account';
 import { MainLayout } from './pages/MainLayout';
 import { InstallPWA } from './components/InstallPWA';
@@ -45,6 +46,7 @@ function App() {
               <Route path=":tulId/video" element={<TulVideo />} />
              </Route>
             <Route path="/theory" element={<Theory />} />
+            <Route path="/theory/study" element={<TheoryStudy />} />
             <Route path="/account" element={<Account />} />
           </Route>
         </Routes>

@@ -14,10 +14,10 @@ const examTuls: Record<string, string[]> = {
 	"gup-4": ["yul-gok"],
 	"gup-3": ["joong-gun"],
 	"gup-2": ["toi-gye"],
-	"gup-1": ["hwa-rang", "choong-moo"],
-	"dan-1": ["kwang-gae", "po-eun", "ge-baek"],
-	"dan-2": ["eui-am", "choong-jang", "juche"],
-	"dan-3": [],
+	"gup-1": ["hwa-rang"],
+	"dan-1": ["choong-moo"],
+	"dan-2": ["kwang-gae", "po-eun", "ge-baek"],
+	"dan-3": ["eui-am", "choong-jang", "juche"],
 };
 
 export const ExamDetail = () => {
@@ -80,7 +80,14 @@ export const ExamDetail = () => {
 											}`}
 										/>
 										<div>
-											<p className="font-medium">{tul.name}</p>
+											<div className="flex items-center gap-2">
+												<p className="font-medium">{tul.name}</p>
+												{tul.isPreTul && (
+													<span className="px-1.5 py-0.5 text-xs font-medium text-white rounded bg-amber-500">
+														Pre-Tul
+													</span>
+												)}
+											</div>
 											<p className="text-xs text-gray-500">
 												{tul.moves} movimientos
 											</p>

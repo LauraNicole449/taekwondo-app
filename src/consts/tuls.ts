@@ -7,6 +7,7 @@ export type Tul = {
   diagram: string;
   video: string;
   movementTimestamps: number[];
+  isPreTul?: boolean;
 };
 
 export const tuls: Tul[] = [
@@ -20,6 +21,7 @@ export const tuls: Tul[] = [
     diagram: '/imgs/Diagram.png',
     video: '/videos/won-hyo.mp4',
     movementTimestamps: [0, 4.5, 30, 45.5],
+    isPreTul: true,
   },
   {
     id: 'saju-makgi',
@@ -31,6 +33,7 @@ export const tuls: Tul[] = [
     diagram: '/imgs/Diagram.png',
     video: '/videos/won-hyo.mp4',
     movementTimestamps: [0, 4.5, 30, 45.5],
+    isPreTul: true,
   },
   {
     id: 'chon-ji',

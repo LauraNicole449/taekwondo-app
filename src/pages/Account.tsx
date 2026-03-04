@@ -1,12 +1,11 @@
 import { useState, useRef } from "react";
-import { Edit, User, Award, Eye, EyeOff, Pencil, Check } from "lucide-react";
+import { Edit, User, Eye, EyeOff, Pencil, Check } from "lucide-react";
 import { useProgress } from "../context/ProgressContext";
 import { exams } from "../consts/exams";
 import { getInitialProfileData } from "@/utils/getInitialProfileData";
 
 export const Account = () => {
-	const { currentBelt, setCurrentBelt, getCompletedCount, getInProgressCount } =
-		useProgress();
+	const { currentBelt, setCurrentBelt } = useProgress();
 	const [profileData, setProfileData] = useState(getInitialProfileData);
 	const [showPassword, setShowPassword] = useState(false);
 	const [isEditingEmail, setIsEditingEmail] = useState(false);
@@ -248,28 +247,6 @@ export const Account = () => {
 								? "Campo editable. Pulsa el botón de guardar cuando termines."
 								: "Pulsa el botón de editar para modificar."}
 						</span>
-					</div>
-				</div>
-
-				{/* Estadísticas de progreso */}
-				<div className="flex flex-col gap-3 p-4 mt-4 rounded-lg bg-gray-50">
-					<div className="flex items-center gap-2">
-						<Award className="w-5 h-5 text-primary-500" />
-						<span className="font-medium text-gray-800">Tu progreso</span>
-					</div>
-					<div className="grid grid-cols-2 gap-4">
-						<div className="flex flex-col items-center p-3 bg-white rounded-md shadow-xs">
-							<span className="text-2xl font-bold text-green-600">
-								{getCompletedCount()}
-							</span>
-							<span className="text-xs text-gray-500">Tules completados</span>
-						</div>
-						<div className="flex flex-col items-center p-3 bg-white rounded-md shadow-xs">
-							<span className="text-2xl font-bold text-amber-500">
-								{getInProgressCount()}
-							</span>
-							<span className="text-xs text-gray-500">En progreso</span>
-						</div>
 					</div>
 				</div>
 			</div>
