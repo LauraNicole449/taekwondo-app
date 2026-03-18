@@ -91,7 +91,7 @@ export const MenuMobile = ({ isOpen, onClose, onLogout }: MenuMobileProps) => {
         })}
       </nav>
 
-      <div className="flex-none px-6 pt-4 pb-6 border-t border-gray-200 safe-area-bottom">
+      <div className="flex-none px-6 pt-4 pb-6 border-t border-gray-200 absolute bottom-1 w-full">
         <Button onClick={onLogout}>Cerrar sesión</Button>
       </div>
     </div>
